@@ -3,6 +3,7 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using PetraqTerminal.ViewModels;
 using PetraqTerminal.Views;
+using System.Globalization;
 
 namespace PetraqTerminal
 {
@@ -10,6 +11,7 @@ namespace PetraqTerminal
     {
         public override void Initialize()
         {
+            Lang.Resources.Culture = CultureInfo.CurrentCulture;
             AvaloniaXamlLoader.Load(this);
         }
 
