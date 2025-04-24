@@ -12,11 +12,14 @@
              
              FlowDirection="{Binding Rtl}">
 
-	<Grid RowDefinitions="*,Auto">
-		<ScrollViewer Grid.Row="0" VerticalScrollBarVisibility="Auto">
-			<StackPanel></StackPanel>
-		</ScrollViewer>
-		<views:UserInputView Grid.Row="1" />
-	</Grid>
-	
+	<DockPanel>
+		<views:MenuBarView DockPanel.Dock="{Binding PanelPosition}"
+						   DataContext="{Binding MenuBar} "/>
+		<Grid Margin="10" RowDefinitions="*,Auto">
+			<views:DialogView DataContext="{Binding Dialog}"
+							  Grid.Row="0" />
+			<views:UserInputView Grid.Row="1" />
+		</Grid>
+	</DockPanel>
+		
 </UserControl>

@@ -13,6 +13,7 @@ namespace PetraqTerminal
     {
         public override void Initialize()
         {
+            CultureInfo.CurrentCulture = new CultureInfo("ar-DZ");
             ChangeCulture(CultureInfo.CurrentCulture);
             AvaloniaXamlLoader.Load(this);
         }
