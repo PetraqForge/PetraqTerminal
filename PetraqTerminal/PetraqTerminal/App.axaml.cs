@@ -1,4 +1,5 @@
 using Avalonia;
+using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,10 +13,10 @@ namespace PetraqTerminal
     {
         public override void Initialize()
         {
-            Lang.Resources.Culture = CultureInfo.CurrentCulture;
+            ChangeCulture(CultureInfo.CurrentCulture);
             AvaloniaXamlLoader.Load(this);
         }
-
+        
         public override void OnFrameworkInitializationCompleted()
         {
             // Register common services
@@ -42,5 +43,12 @@ namespace PetraqTerminal
 
             base.OnFrameworkInitializationCompleted();
         }
+
+
+        private static void ChangeCulture(CultureInfo cultureInfo)
+        {
+            Lang.Resources.Culture = cultureInfo;
+        }
+
     }
 }

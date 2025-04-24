@@ -5,12 +5,17 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="PetraqTerminal.Views.UserInputView">
 	<StackPanel>
-		<TextBox TextWrapping="Wrap" AcceptsReturn="True" MaxHeight="200">
+		<TextBox TextWrapping="Wrap" AcceptsReturn="True"
+				 MinHeight="70" MaxHeight="200"
+				 >
 			<TextBox.InnerRightContent>
 				<StackPanel Orientation="Horizontal" VerticalAlignment="Top">
-					<Button />
-					<Button />
-					<Button />
+					<Button Classes="utility_button">
+						<PathIcon Data="{StaticResource fluent_send_icon}"/>
+					</Button>
+					<Button Classes="utility_button">
+						<PathIcon Data="{StaticResource fluent_mic_icon}"/>
+					</Button>
 				</StackPanel>
 			</TextBox.InnerRightContent>
 		</TextBox>

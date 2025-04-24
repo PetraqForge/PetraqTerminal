@@ -1,0 +1,33 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <Design.PreviewWith>
+    <Border Padding="20">
+      <!-- Add Controls for Previewer Here -->
+    </Border>
+  </Design.PreviewWith>
+
+	<!--Idle Button-->
+	<Style Selector="Button.utility_button">
+		<Setter Property="Background" Value="Transparent" />
+	</Style>
+	<Style Selector="Button.utility_button > PathIcon">
+		<Setter Property="Foreground" Value="{DynamicResource ThemeForegroundBrush}" />
+	</Style>
+
+	<!--Hover Button-->
+	<Style Selector="ContentPresenter:pointerover">
+		<Setter Property="Background" Value="Transparent" />
+	</Style>
+	<Style Selector="Button.utility_button:pointerover > PathIcon">
+			<Setter Property="Foreground" Value="{DynamicResource SystemAccentColor}" />
+	</Style>
+
+	<!--Pressed Button-->
+	<Style Selector="ContentPresenter:pressed">
+		<Setter Property="Background" Value="Transparent" />
+	</Style>
+	<Style Selector="Button.utility_button:pressed > PathIcon">
+			<Setter Property="Foreground" Value="{DynamicResource SystemAccentColorDark1}" />
+	</Style>
+	
+</Styles>
