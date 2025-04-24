@@ -1,5 +1,8 @@
 ﻿using Android.App;
 using Android.Content.PM;
+using Android.OS;
+using Android.Views;
+using Android.Views.InputMethods;
 using Avalonia;
 using Avalonia.Android;
 using Avalonia.ReactiveUI;
@@ -19,6 +22,12 @@ namespace PetraqTerminal.Android
             return base.CustomizeAppBuilder(builder)
                 .WithInterFont()
                 .UseReactiveUI();
+        }
+
+        protected override void OnCreate(Bundle? savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+            Window!.SetSoftInputMode(SoftInput.AdjustResize);
         }
     }
 }
