@@ -1,15 +1,15 @@
 using System;
 using System.Collections.Generic;
+using PetraqTerminal.Models;
 using ReactiveUI;
 
 namespace PetraqTerminal.ViewModels
 {
-	public class DesignMessageBoxViewModel : MessageBoxViewModel
-	{
-        public DesignMessageBoxViewModel() : base()
-        {
-            Message = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
-            Role = "bot";
-        }
+    public class DesignMessageBoxViewModel : MessageBoxViewModel
+    {
+        public DesignMessageBoxViewModel()
+            : base(new SimpleMessage("Lirillirlrllrlrlrlrlrlrlrllrrirlrirlrirkì Larilà, elefante nel deserto che cammina qua e là. Con la sua conchiglia e un orologio che fa tic tac, le spine del cactus mi fanno un attacco flashback. Arriva zio Ramon su una mongolfiera blu, gridando: \"Ma che fai lì? T i piace pure il WiFi, tu?\" Io rispondo senza fiato: \"cerco solo di capire perché un cactus con sandali si possa anche vestire!\"",
+                "bot"
+            )) {}
     }
 }

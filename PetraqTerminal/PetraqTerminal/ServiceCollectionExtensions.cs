@@ -1,5 +1,6 @@
 ﻿using Avalonia.Logging;
 using Microsoft.Extensions.DependencyInjection;
+using PetraqTerminal.Services;
 using PetraqTerminal.ViewModels;
 using Splat;
 using System;
@@ -16,6 +17,7 @@ namespace PetraqTerminal
         public static void AddCommonServices(this IServiceCollection collection)
         {
             collection.AddSingleton<MainViewModel>();
+            collection.AddSingleton<IConversationService, DummyConversationService>();
         }
     }
 }

@@ -1,44 +1,34 @@
 using System;
 using System.Collections.Generic;
+using PetraqTerminal.Models;
 using ReactiveUI;
 
 namespace PetraqTerminal.ViewModels
 {
 	public class MessageBoxViewModel : ReactiveObject
 	{
-		private string? _message;
-		private string? _role;
+		private IMessage _message;
+		public string? Sender => Message.Sender;
+		public string? Content => Message.Content;
 
-		public string? Message
+		public IMessage Message
 		{
 			get => _message;
 			set
 			{
-                Console.WriteLine($"[VM] Message set to: {value}");
 				this.RaiseAndSetIfChanged(ref _message, value);
 			}
 		}
 
-		public string? Role
-		{
-			get => _role;
-			set => this.RaiseAndSetIfChanged(ref _role, value);
-		}
-
 		public string Background =>
-			(Role == "bot") ? "#DDDDDD" : "#EEEEEE";
+			(Message.Sender == "bot") ? "#DDDDDD" : "#EEEEEE";
 
 		public string Position => 
-			(Role == "bot") ? "Left" : "Right";
+			(Message.Sender == "bot") ? "Left" : "Right";
 
-        public MessageBoxViewModel()
-        {
-            
-        }
 
-        public MessageBoxViewModel(string message, string role)
+        public MessageBoxViewModel(IMessage message)
         {
-			_role = role;
 			_message = message;
         }
     }

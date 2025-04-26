@@ -13,7 +13,7 @@
 	<Border HorizontalAlignment="{Binding Position}"
 			CornerRadius="5" ClipToBounds="True" >
 		<StackPanel Background="{Binding Background}">
-			<TextBlock Padding="10" TextWrapping="Wrap" Text="{Binding Message}" />
+			<TextBlock Padding="10" TextWrapping="Wrap" Text="{Binding Content}" />
 		</StackPanel>
 	</Border>
 </UserControl>
