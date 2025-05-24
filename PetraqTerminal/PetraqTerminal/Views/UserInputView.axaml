@@ -2,15 +2,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:vm="clr-namespace:PetraqTerminal.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 x:DataType="vm:UserInputModel"
              x:Class="PetraqTerminal.Views.UserInputView">
 	<StackPanel>
 		<TextBox TextWrapping="Wrap" AcceptsReturn="True"
 				 MinHeight="70" MaxHeight="200"
+				 Text="{Binding Text}"
 				 >
 			<TextBox.InnerRightContent>
 				<StackPanel Orientation="Horizontal" VerticalAlignment="Top">
-					<Button Classes="utility_button">
+					<Button Classes="utility_button" Command="{Binding SubmitReplyCommand}"
+							HotKey="Shift+Enter">
 						<PathIcon Data="{StaticResource fluent_send_icon}"/>
 					</Button>
 					<Button Classes="utility_button">

@@ -18,7 +18,8 @@
 		<Grid Margin="10" RowDefinitions="*,Auto">
 			<views:DialogView DataContext="{Binding Dialog}"
 							  Grid.Row="0" />
-			<views:UserInputView Grid.Row="1" />
+			<views:UserInputView DataContext="{Binding UserInput}"
+							Grid.Row="1" />
 		</Grid>
 	</DockPanel>
 		

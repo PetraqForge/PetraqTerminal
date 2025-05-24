@@ -3,7 +3,7 @@ using PetraqTerminal.Models;
 
 namespace PetraqTerminal.Services
 {
-    interface IConversationService
+    public interface IConversationService
     {
         IMessage GetReply(IMessage message);
     }
